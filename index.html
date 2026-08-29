@@ -30,14 +30,14 @@
         .faq-toggle:checked ~ .faq-label .arrow { transform: rotate(180deg); }
     </style>
 </head>
-<body class="blueprint-bg text-slate-100 min-h-screen flex flex-col justify-between">
+<body class="blueprint-bg text-slate-200 min-h-screen flex flex-col justify-between">
 
     <!-- 💼 TOP BANNER: UNBREAKABLE MARKETPLACE GATEWAYS -->
     <div class="bg-amber-500 text-slate-950 text-center py-3 px-4 font-bold text-sm tracking-wide shadow-md flex flex-col sm:flex-row justify-center items-center gap-2">
-        <span>💼 ACQUISITION NOTICE: The premium brand asset TrueFabricate.com is available for lease or purchase.</span>
+        <span class="text-slate-950">💼 ACQUISITION NOTICE: The premium brand asset TrueFabricate.com is available for lease or purchase.</span>
         <div class="flex gap-2 mt-1 sm:mt-0">
-            <a href="https://www.godaddy.com/domainsearch/find?isc=123&domainToCheck=truefabricate.com" target="_blank" class="bg-slate-950 text-white px-3 py-1 rounded text-xs uppercase hover:bg-slate-800 transition">Buy via GoDaddy</a>
-            <a href="https://www.atom.com/view/name/truefabricate.com" target="_blank" class="bg-slate-900 text-white px-3 py-1 rounded text-xs uppercase hover:bg-slate-700 transition">Lease via Atom</a>
+            <a href="https://www.godaddy.com/domainsearch/find?isc=123&domainToCheck=truefabricate.com" target="_blank" class="bg-slate-950 text-white px-3 py-1 rounded text-xs uppercase hover:bg-slate-800 transition font-bold">Buy via GoDaddy</a>
+            <a href="https://www.atom.com/view/name/truefabricate.com" target="_blank" class="bg-slate-900 text-white px-3 py-1 rounded text-xs uppercase hover:bg-slate-700 transition font-bold">Lease via Atom</a>
         </div>
     </div>
 
@@ -45,13 +45,13 @@
     <main class="max-w-4xl w-full mx-auto p-6 my-auto">
         <div class="text-center mb-8">
             <h1 class="text-4xl font-extrabold tracking-tight text-white mb-2">TRUE FABRICATE</h1>
-            <p class="text-slate-400 max-w-xl mx-auto text-sm">Precision Engineering Tools. Calculate raw metallurgical weight limits and dynamic sheet metal bend allowances instantly.</p>
+            <p class="text-slate-300 max-w-xl mx-auto text-sm">Precision Engineering Tools. Calculate raw metallurgical weight limits and dynamic sheet metal bend allowances instantly.</p>
             
             <!-- UNIT TOGGLE -->
             <div class="mt-4 flex justify-center">
                 <div class="bg-slate-950/60 p-1 rounded-lg border border-slate-800/50 flex backdrop-blur-md">
                     <button id="btn-imperial" onclick="setUnitSystem('imperial')" class="px-4 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition bg-amber-500 text-slate-950">Imperial (in/lbs)</button>
-                    <button id="btn-metric" onclick="setUnitSystem('metric')" class="px-4 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition text-slate-400 hover:text-white">Metric (mm/kg)</button>
+                    <button id="btn-metric" onclick="setUnitSystem('metric')" class="px-4 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition text-slate-300 hover:text-white">Metric (mm/kg)</button>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                 <h2 class="text-xl font-bold text-amber-400 border-b border-slate-800 pb-2">Material Parameters</h2>
                 
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Material Type</label>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Material Type</label>
                     <select id="material" onchange="calculateMetrics()" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white focus:border-amber-500 focus:outline-none">
                         <option value="0.284">Steel (Mild/Carbon)</option>
                         <option value="0.290">Stainless Steel</option>
@@ -75,43 +75,42 @@
 
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Thickness (<span class="unit-label-dim">Inches</span>)</label>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Thickness (<span class="unit-label-dim">Inches</span>)</label>
                         <input type="number" id="thickness" value="0.125" step="0.001" oninput="calculateMetrics()" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white focus:border-amber-500 focus:outline-none">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Width (<span class="unit-label-dim">Inches</span>)</label>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Width (<span class="unit-label-dim">Inches</span>)</label>
                         <input type="number" id="width" value="12" step="0.01" oninput="calculateMetrics()" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white focus:border-amber-500 focus:outline-none">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Length (<span class="unit-label-dim">Inches</span>)</label>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1">Length (<span class="unit-label-dim">Inches</span>)</label>
                     <input type="number" id="length" value="24" step="0.01" oninput="calculateMetrics()" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white focus:border-amber-500 focus:outline-none">
                 </div>
 
                 <!-- ADVANCED BENDING VARIABLES -->
-                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider pt-2 border-t border-slate-800/80">Advanced Bending Specs</h3>
+                <h3 class="text-sm font-bold text-slate-300 uppercase tracking-wider pt-2 border-t border-slate-800/80">Advanced Bending Specs</h3>
                 
                 <div class="grid grid-cols-3 gap-3">
                     <div>
-                        <label class="block text-[10px] font-semibold uppercase tracking-wider text-slate-400 mb-1">Angle (°)</label>
+                        <label class="block text-[10px] font-semibold uppercase tracking-wider text-slate-300 mb-1">Angle (°)</label>
                         <input type="number" id="bend-angle" value="90" min="1" max="180" oninput="calculateMetrics()" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-sm text-white focus:border-amber-500 focus:outline-none">
                     </div>
                     <div>
-                        <label class="block text-[10px] font-semibold uppercase tracking-wider text-slate-400 mb-1">Radius (<span class="unit-label-dim">in</span>)</label>
+                        <label class="block text-[10px] font-semibold uppercase tracking-wider text-slate-300 mb-1">Radius (<span class="unit-label-dim">in</span>)</label>
                         <input type="number" id="bend-radius" value="0.125" step="0.001" oninput="calculateMetrics()" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-sm text-white focus:border-amber-500 focus:outline-none">
                     </div>
                     <div>
-                        <label class="block text-[10px] font-semibold uppercase tracking-wider text-slate-400 mb-1">K-Factor</label>
+                        <label class="block text-[10px] font-semibold uppercase tracking-wider text-slate-300 mb-1">K-Factor</label>
                         <input type="number" id="k-factor" value="0.440" step="0.001" min="0" max="1" oninput="calculateMetrics()" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-sm text-white focus:border-amber-500 focus:outline-none">
                     </div>
                 </div>
             </div>
-
             <!-- CALCULATOR OUTPUTS -->
             <div class="bg-slate-950/40 p-5 rounded-xl border border-slate-800 flex flex-col justify-between">
                 <div>
-                    <h2 class="text-xl font-bold text-slate-300 border-b border-slate-800 pb-2 mb-4">Calculated Metrics</h2>
+                    <h2 class="text-xl font-bold text-slate-200 border-b border-slate-800 pb-2 mb-4">Calculated Metrics</h2>
                     <div class="space-y-4">
                         <div>
                             <span class="text-xs uppercase tracking-wider text-slate-400 block">Total Est. Mass / Weight</span>
@@ -132,3 +131,143 @@
 
                 <!-- FLOATING MARKETPLACE BRIDGE AD -->
                 <div class="mt-6 p-3 bg-slate-900 rounded-lg border border-slate-800 text-center">
+                    <span class="text-[10px] uppercase text-slate-400 tracking-widest block mb-1">Sponsored Industrial Hardware</span>
+                    <a href="https://www.atom.com/view/name/truefabricate.com" target="_blank" class="text-amber-400 hover:underline text-xs font-semibold block">Need specialized custom metal manufacturing? Secure this premium industrial domain name setup today.</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 📚 HIGH-VALUE SEO TERMINOLOGY GLOSSARY -->
+        <section class="mt-12 border-t border-slate-800/80 pt-8">
+            <h2 class="text-lg font-bold text-slate-200 mb-4 tracking-wide text-center md:text-left">Fabrication Terminology Matrix</h2>
+            <div class="grid md:grid-cols-3 gap-4 text-xs text-slate-300">
+                <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800 backdrop-blur-sm">
+                    <strong class="text-amber-400 block mb-1">Bend Allowance (BA)</strong>
+                    The exact length of material needed to navigate a bend. Accurately determining BA prevents stretching or cracking during brake forming operations.
+                </div>
+                <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800 backdrop-blur-sm">
+                    <strong class="text-amber-400 block mb-1">K-Factor Value</strong>
+                    The ratio shifting the neutral axis position relative to sheet metal material thickness during a mechanical sheet bend operation.
+                </div>
+                <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800 backdrop-blur-sm">
+                    <strong class="text-amber-400 block mb-1">Metallurgical Density</strong>
+                    The raw volume-to-mass weight ratio. Measured across alloy groups including carbon structural steels, aluminum plates, and copper flats.
+                </div>
+            </div>
+        </section>
+
+        <!-- ❓ RICH SEARCH SNIPPET FAQ ACCORDION -->
+        <section class="mt-8 mb-12">
+            <h2 class="text-lg font-bold text-slate-200 mb-4 tracking-wide text-center md:text-left">Frequently Asked Questions</h2>
+            <div class="space-y-2">
+                <!-- FAQ Item 1 -->
+                <div class="bg-slate-900/60 rounded-lg border border-slate-800 overflow-hidden backdrop-blur-sm">
+                    <input type="checkbox" id="faq-1" class="hidden faq-toggle">
+                    <label for="faq-1" class="faq-label flex justify-between items-center p-4 cursor-pointer text-sm font-semibold select-none text-slate-200 hover:text-white">
+                        How do you accurately calculate sheet metal flat blank length?
+                        <span class="arrow transition-transform duration-200 text-amber-400">▼</span>
+                    </label>
+                    <div class="faq-content bg-slate-950/40 border-t border-slate-800 text-xs text-slate-300 px-4">
+                        <p class="py-3">To find total flat layout length, combine the overall outside dimensions of your distinct flanges, then add your computed sheet metal Bend Allowance (BA) value or subtract your designated bend deductions.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-slate-900/60 rounded-lg border border-slate-800 overflow-hidden backdrop-blur-sm">
+                    <input type="checkbox" id="faq-2" class="hidden faq-toggle">
+                    <label for="faq-2" class="faq-label flex justify-between items-center p-4 cursor-pointer text-sm font-semibold select-none text-slate-200 hover:text-white">
+                        Why does material thickness alter metal brake bending variables?
+                        <span class="arrow transition-transform duration-200 text-amber-400">▼</span>
+                    </label>
+                    <div class="faq-content bg-slate-950/40 border-t border-slate-800 text-xs text-slate-300 px-4">
+                        <p class="py-3">Heavier stock scales the physical tension applied on outer metal surfaces during a press cycle. Adjusting the internal thickness parameters alters your standard K-Factor alignment configurations dynamically.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="w-full text-center py-4 text-xs text-slate-400 border-t border-slate-800/50 bg-slate-950/80 backdrop-blur-sm">
+        &copy; 2026 TrueFabricate.com. All Rights Reserved. Managed via Secure Decentralized Cloud Distribution.
+    </footer>
+    <!-- LIGHTWEIGHT CLIENT-SIDE METALLURGICAL LOGIC -->
+    <script>
+        let currentSystem = 'imperial';
+
+        const INCH_TO_MM = 25.4;
+        const LBS_TO_KG = 0.45359237;
+        const LBS_IN3_TO_G_CM3 = 27.679904;
+
+        function setUnitSystem(system) {
+            if (currentSystem === system) return;
+            currentSystem = system;
+
+            const imperialBtn = document.getElementById('btn-imperial');
+            const metricBtn = document.getElementById('btn-metric');
+            
+            if (system === 'imperial') {
+                imperialBtn.className = "px-4 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition bg-amber-500 text-slate-950";
+                metricBtn.className = "px-4 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition text-slate-300 hover:text-white";
+            } else {
+                metricBtn.className = "px-4 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition bg-amber-500 text-slate-950";
+                imperialBtn.className = "px-4 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition text-slate-300 hover:text-white";
+            }
+
+            const inputsDim = ['thickness', 'width', 'length', 'bend-radius'];
+            inputsDim.forEach(id => {
+                const el = document.getElementById(id);
+                let val = parseFloat(el.value);
+                if (!isNaN(val)) {
+                    el.value = system === 'metric' ? (val * INCH_TO_MM).toFixed(2) : (val / INCH_TO_MM).toFixed(3);
+                }
+            });
+
+            const dimLabels = document.querySelectorAll('.unit-label-dim');
+            dimLabels.forEach(el => el.innerText = system === 'metric' ? 'mm' : 'Inches');
+
+            calculateMetrics();
+        }
+
+        function calculateMetrics() {
+            const imperialDensity = parseFloat(document.getElementById('material').value);
+            
+            let thickness = parseFloat(document.getElementById('thickness').value);
+            let width = parseFloat(document.getElementById('width').value);
+            let length = parseFloat(document.getElementById('length').value);
+            
+            const bendAngle = parseFloat(document.getElementById('bend-angle').value);
+            let bendRadius = parseFloat(document.getElementById('bend-radius').value);
+            const kFactor = parseFloat(document.getElementById('k-factor').value);
+
+            if (isNaN(thickness) || isNaN(width) || isNaN(length) || isNaN(bendAngle) || isNaN(bendRadius) || isNaN(kFactor)) return;
+
+            let calculatedWeight = 0;
+            let bendAllowance = 0;
+
+            if (currentSystem === 'imperial') {
+                calculatedWeight = (thickness * width * length) * imperialDensity;
+                bendAllowance = (bendAngle * (Math.PI / 180)) * (bendRadius + (kFactor * thickness));
+
+                document.getElementById('weight-result').innerHTML = calculatedWeight.toFixed(2) + ' <span class="text-lg font-medium text-slate-400">lbs</span>';
+                document.getElementById('density-result').innerText = imperialDensity.toFixed(3) + ' lbs/in³';
+                document.getElementById('bend-result').innerText = bendAllowance.toFixed(3) + ' in';
+            } else {
+                const metricDensity = imperialDensity * LBS_IN3_TO_G_CM3;
+                const densityKgMm3 = metricDensity * 0.000001;
+                
+                calculatedWeight = (thickness * width * length) * densityKgMm3;
+                bendAllowance = (bendAngle * (Math.PI / 180)) * (bendRadius + (kFactor * thickness));
+
+                document.getElementById('weight-result').innerHTML = calculatedWeight.toFixed(2) + ' <span class="text-lg font-medium text-slate-400">kg</span>';
+                document.getElementById('density-result').innerText = metricDensity.toFixed(2) + ' g/cm³';
+                document.getElementById('bend-result').innerText = bendAllowance.toFixed(2) + ' mm';
+            }
+        }
+
+        window.onload = function() {
+            calculateMetrics();
+        };
+    </script>
+</body>
+</html>
