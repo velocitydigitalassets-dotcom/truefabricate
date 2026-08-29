@@ -30,7 +30,7 @@
         .faq-toggle:checked ~ .faq-label .arrow { transform: rotate(180deg); }
     </style>
 </head>
-<body class="blueprint-bg text-slate-200 min-h-screen flex flex-col justify-between">
+<body class="blueprint-bg text-slate-100 min-h-screen flex flex-col justify-between">
 
     <!-- 💼 TOP BANNER: UNBREAKABLE MARKETPLACE GATEWAYS -->
     <div class="bg-amber-500 text-slate-950 text-center py-3 px-4 font-bold text-sm tracking-wide shadow-md flex flex-col sm:flex-row justify-center items-center gap-2">
@@ -57,7 +57,7 @@
         </div>
 
         <!-- Glassmorphism Container with subtle amber accent border -->
-        <div class="grid md:grid-cols-2 gap-8 bg-slate-900/75 p-6 rounded-2xl border border-amber-500/10 backdrop-blur-md shadow-2xl shadow-black/50">
+        <div class="grid md:grid-cols-2 gap-8 bg-slate-900/95 p-6 rounded-2xl border border-amber-500/20 backdrop-blur-md shadow-2xl shadow-black/80">
             <!-- CALCULATOR INPUTS -->
             <div class="space-y-4">
                 <h2 class="text-xl font-bold text-amber-400 border-b border-slate-800 pb-2">Material Parameters</h2>
@@ -90,7 +90,7 @@
                 </div>
 
                 <!-- ADVANCED BENDING VARIABLES -->
-                <h3 class="text-sm font-bold text-slate-300 uppercase tracking-wider pt-2 border-t border-slate-800/80">Advanced Bending Specs</h3>
+                <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider pt-2 border-t border-slate-800/80">Advanced Bending Specs</h3>
                 
                 <div class="grid grid-cols-3 gap-3">
                     <div>
@@ -107,57 +107,64 @@
                     </div>
                 </div>
             </div>
-            <!-- CALCULATOR OUTPUTS -->
-            <div class="bg-slate-950/40 p-5 rounded-xl border border-slate-800 flex flex-col justify-between">
+            <!-- CALCULATOR OUTPUTS & ACQUISITION INQUIRY MATRIX -->
+            <div class="bg-slate-950/60 p-5 rounded-xl border border-slate-800 flex flex-col justify-between space-y-4">
                 <div>
-                    <h2 class="text-xl font-bold text-slate-200 border-b border-slate-800 pb-2 mb-4">Calculated Metrics</h2>
-                    <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-slate-100 border-b border-slate-800 pb-2 mb-3">Calculated Metrics</h2>
+                    <div class="space-y-3">
                         <div>
                             <span class="text-xs uppercase tracking-wider text-slate-400 block">Total Est. Mass / Weight</span>
-                            <span id="weight-result" class="text-4xl font-black text-white">17.04 <span class="text-lg font-medium text-slate-400 unit-label-weight">lbs</span></span>
+                            <span id="weight-result" class="text-3xl font-black text-white">17.04 <span class="text-base font-medium text-slate-400 unit-label-weight">lbs</span></span>
                         </div>
-                        <div class="grid grid-cols-2 gap-2 pt-2 border-b border-slate-800/60 pb-4">
+                        <div class="grid grid-cols-2 gap-2 pt-1 pb-2 border-b border-slate-800/60">
                             <div>
-                                <span class="text-xs uppercase tracking-wider text-slate-400 block">Material Density</span>
+                                <span class="text-[11px] uppercase tracking-wider text-slate-400 block">Material Density</span>
                                 <span id="density-result" class="text-sm font-bold text-slate-200">0.284 lbs/in³</span>
                             </div>
                             <div>
-                                <span class="text-xs uppercase tracking-wider text-slate-400 block">Bend Allowance</span>
-                                <span id="bend-result" class="text-lg font-bold text-amber-400">0.283 in</span>
+                                <span class="text-[11px] uppercase tracking-wider text-slate-400 block">Bend Allowance</span>
+                                <span id="bend-result" class="text-sm font-bold text-amber-400">0.283 in</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- DIRECT MARKTPLACE INQUIRY ACTION BUTTONS -->
-                <div class="mt-4 space-y-2">
-                    <span class="text-[10px] uppercase text-slate-400 tracking-widest block text-center">Domain Acquisition Portals</span>
-                    <a href="https://www.atom.com/view/name/truefabricate.com" target="_blank" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold uppercase text-xs tracking-wider py-2.5 rounded-lg transition shadow-lg block text-center shadow-amber-500/10">
-                        Inquire / Make An Offer
-                    </a>
-                </div>
+                <!-- EMBEDDED INQUIRY FORM (Forced High-Contrast White Text Overrides) -->
+                <form id="inquiryForm" onsubmit="submitInquiry(event)" class="space-y-2 pt-1 text-left">
+                    <span class="text-[10px] uppercase text-amber-400 tracking-widest block text-center font-bold">Secure TrueFabricate.com Asset</span>
+                    <div class="grid grid-cols-2 gap-2">
+                        <input type="text" id="buyerName" placeholder="Your Name" required class="bg-slate-900 border border-slate-800 rounded p-1.5 text-xs text-white placeholder-slate-500 focus:border-amber-500 focus:outline-none">
+                        <input type="email" id="buyerEmail" placeholder="Your Email" required class="bg-slate-900 border border-slate-800 rounded p-1.5 text-xs text-white placeholder-slate-500 focus:border-amber-500 focus:outline-none">
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 items-center">
+                        <input type="text" id="buyerOffer" placeholder="Offer ($USD)" required class="col-span-1 bg-slate-900 border border-slate-800 rounded p-1.5 text-xs text-white placeholder-slate-500 focus:border-amber-500 focus:outline-none">
+                        <textarea id="buyerMessage" placeholder="Message or Terms..." rows="1" required class="col-span-2 bg-slate-900 border border-slate-800 rounded p-1.5 text-xs text-white placeholder-slate-500 focus:border-amber-500 focus:outline-none resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold uppercase text-[11px] tracking-wider py-2 rounded transition shadow-lg shadow-amber-500/10 cursor-pointer">Submit Acquisition Bid</button>
+                    <span id="formStatus" class="text-[10px] block text-center font-semibold mt-1"></span>
+                </form>
 
                 <!-- FLOATING MARKETPLACE BRIDGE AD -->
-                <div class="mt-4 p-2.5 bg-slate-900 rounded-lg border border-slate-800 text-center">
-                    <a href="https://www.atom.com/view/name/truefabricate.com" target="_blank" class="text-amber-400 hover:underline text-[11px] font-semibold block leading-tight">Need specialized custom metal manufacturing? Secure this premium industrial brand asset setup today.</a>
+                <div class="p-2 bg-slate-900/80 rounded border border-slate-800 text-center">
+                    <a href="https://www.atom.com/view/name/truefabricate.com" target="_blank" class="text-amber-400 hover:text-amber-300 hover:underline text-[10px] font-semibold block leading-tight">Secure this premium brand via verified marketplace escrows. View Atom Listing.</a>
                 </div>
             </div>
         </div>
 
         <!-- 📚 HIGH-VALUE SEO TERMINOLOGY GLOSSARY -->
         <section class="mt-12 border-t border-slate-800/80 pt-8">
-            <h2 class="text-lg font-bold text-slate-200 mb-4 tracking-wide text-center md:text-left">Fabrication Terminology Matrix</h2>
-            <div class="grid md:grid-cols-3 gap-4 text-xs text-slate-300">
-                <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800 backdrop-blur-sm">
-                    <strong class="text-amber-400 block mb-1">Bend Allowance (BA)</strong>
+            <h2 class="text-lg font-bold text-slate-100 mb-4 tracking-wide text-center md:text-left">Fabrication Terminology Matrix</h2>
+            <div class="grid md:grid-cols-3 gap-4 text-xs">
+                <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800 backdrop-blur-sm text-slate-300">
+                    <strong class="text-amber-400 block mb-1 text-sm">Bend Allowance (BA)</strong>
                     The exact length of material needed to navigate a bend. Accurately determining BA prevents stretching or cracking during brake forming operations.
                 </div>
-                <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800 backdrop-blur-sm">
-                    <strong class="text-amber-400 block mb-1">K-Factor Value</strong>
+                <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800 backdrop-blur-sm text-slate-300">
+                    <strong class="text-amber-400 block mb-1 text-sm">K-Factor Value</strong>
                     The ratio shifting the neutral axis position relative to sheet metal material thickness during a mechanical sheet bend operation.
                 </div>
-                <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800 backdrop-blur-sm">
-                    <strong class="text-amber-400 block mb-1">Metallurgical Density</strong>
+                <div class="bg-slate-900/60 p-3 rounded-lg border border-slate-800 backdrop-blur-sm text-slate-300">
+                    <strong class="text-amber-400 block mb-1 text-sm">Metallurgical Density</strong>
                     The raw volume-to-mass weight ratio. Measured across alloy groups including carbon structural steels, aluminum plates, and copper flats.
                 </div>
             </div>
@@ -165,29 +172,27 @@
 
         <!-- ❓ RICH SEARCH SNIPPET FAQ ACCORDION -->
         <section class="mt-8 mb-12">
-            <h2 class="text-lg font-bold text-slate-200 mb-4 tracking-wide text-center md:text-left">Frequently Asked Questions</h2>
+            <h2 class="text-lg font-bold text-slate-100 mb-4 tracking-wide text-center md:text-left">Frequently Asked Questions</h2>
             <div class="space-y-2">
-                <!-- FAQ Item 1 -->
                 <div class="bg-slate-900/60 rounded-lg border border-slate-800 overflow-hidden backdrop-blur-sm">
                     <input type="checkbox" id="faq-1" class="hidden faq-toggle">
                     <label for="faq-1" class="faq-label flex justify-between items-center p-4 cursor-pointer text-sm font-semibold select-none text-slate-200 hover:text-white">
                         How do you accurately calculate sheet metal flat blank length?
                         <span class="arrow transition-transform duration-200 text-amber-400">▼</span>
                     </label>
-                    <div class="faq-content bg-slate-950/40 border-t border-slate-800 text-xs text-slate-300 px-4">
-                        <p class="py-3">To find total flat layout length, combine the overall outside dimensions of your distinct flanges, then add your computed sheet metal Bend Allowance (BA) value or subtract your designated bend deductions.</p>
+                    <div class="faq-content bg-slate-950/60 border-t border-slate-800 text-xs text-slate-300 px-4">
+                        <p class="py-3 leading-relaxed">To find total flat layout length, combine the overall outside dimensions of your distinct flanges, then add your computed sheet metal Bend Allowance (BA) value or subtract your designated bend deductions.</p>
                     </div>
                 </div>
 
-                <!-- FAQ Item 2 -->
                 <div class="bg-slate-900/60 rounded-lg border border-slate-800 overflow-hidden backdrop-blur-sm">
                     <input type="checkbox" id="faq-2" class="hidden faq-toggle">
                     <label for="faq-2" class="faq-label flex justify-between items-center p-4 cursor-pointer text-sm font-semibold select-none text-slate-200 hover:text-white">
                         Why does material thickness alter metal brake bending variables?
                         <span class="arrow transition-transform duration-200 text-amber-400">▼</span>
                     </label>
-                    <div class="faq-content bg-slate-950/40 border-t border-slate-800 text-xs text-slate-300 px-4">
-                        <p class="py-3">Heavier stock scales the physical tension applied on outer metal surfaces during a press cycle. Adjusting the internal thickness parameters alters your standard K-Factor alignment configurations dynamically.</p>
+                    <div class="faq-content bg-slate-950/60 border-t border-slate-800 text-xs text-slate-300 px-4">
+                        <p class="py-3 leading-relaxed">Heavier stock scales the physical tension applied on outer metal surfaces during a press cycle. Adjusting the internal thickness parameters alters your standard K-Factor alignment configurations dynamically.</p>
                     </div>
                 </div>
             </div>
@@ -269,6 +274,41 @@
                 document.getElementById('weight-result').innerHTML = calculatedWeight.toFixed(2) + ' <span class="text-lg font-medium text-slate-400">kg</span>';
                 document.getElementById('density-result').innerText = metricDensity.toFixed(2) + ' g/cm³';
                 document.getElementById('bend-result').innerText = bendAllowance.toFixed(2) + ' mm';
+            }
+        }
+
+        // ASYNC API HOOK: DISPATCH FORM DATA TO YOUR CLOUDFLARE WORKER ROUTER
+        async function submitInquiry(event) {
+            event.preventDefault();
+            const statusEl = document.getElementById('formStatus');
+            statusEl.innerText = "Transmitting Bid Request...";
+            statusEl.className = "text-[10px] block text-center font-semibold mt-1 text-amber-400";
+
+            const payload = {
+                name: document.getElementById('buyerName').value,
+                email: document.getElementById('buyerEmail').value,
+                offer: document.getElementById('buyerOffer').value,
+                message: document.getElementById('buyerMessage').value
+            };
+
+            try {
+                // <-- PASTE YOUR EXACT LIVE CLOUDFLARE WORKER ROUTE URL BETWEEN THESE QUOTES
+                const response = await fetch("https://thesolidlithium-site.velocitydigitalassets.workers.dev", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    statusEl.innerText = "Bid Dispatched Successfully via Secure Escrow Routing!";
+                    statusEl.className = "text-[10px] block text-center font-semibold mt-1 text-emerald-400";
+                    document.getElementById('inquiryForm').reset();
+                } else {
+                    throw new Error("API Server Refusal Connection Failure");
+                }
+            } catch (err) {
+                statusEl.innerText = "Transmission Link Interrupt. Review Core Console Node Logs.";
+                statusEl.className = "text-[10px] block text-center font-semibold mt-1 text-rose-400";
             }
         }
 
