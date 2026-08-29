@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Optimized SEO Title targeting high-volume B2B/Machining search intents -->
     <title>Sheet Metal Weight Calculator & Bend Allowance | True Fabricate</title>
-    <!-- Enhanced Meta Description for maximum Click-Through Rate (CTR) in search results -->
     <meta name="description" content="Free industrial fabrication calculation suite. Instantly determine sheet metal weight, metallurgical mass profiles, and precise bend allowance measurements.">
-    <meta name="keywords" content="sheet metal weight calculator, bend allowance calculator, steel plate weight, metal fabrication tools, engineering calculator">
-    <!-- Tailwind CSS CDN for high-end styling -->
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <meta name="keywords" content="sheet metal weight calculator, bend allowance calculator, steel plate weight, metal fabrication tools, engineering calculator, bend radius, k-factor">
+    
+    <!-- Tailwind CSS v4 CDN (Powered by unpkg/Cloudflare Network to eliminate lag) -->
+    <script src="https://unpkg.com"></script>
     <style>
         body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
+        /* Smooth transition for accordion dropdowns */
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.2s ease-out; }
+        .faq-toggle:checked ~ .faq-content { max-height: 200px; }
+        .faq-toggle:checked ~ .faq-label .arrow { transform: rotate(180deg); }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between">
@@ -48,7 +51,6 @@
                 <div>
                     <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">Material Type</label>
                     <select id="material" onchange="calculateMetrics()" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-white focus:border-amber-500 focus:outline-none">
-                        <!-- Values represent Imperial Density (lbs/in³). JavaScript converts dynamically for metric. -->
                         <option value="0.284">Steel (Mild/Carbon)</option>
                         <option value="0.290">Stainless Steel</option>
                         <option value="0.098">Aluminum</option>
@@ -122,11 +124,7 @@
             </div>
         </div>
 
-        <!-- SEO GROUNDING CONTENT -->
-        <article class="mt-8 text-xs text-slate-500 leading-relaxed max-w-3xl mx-auto text-center border-t border-slate-800/80 pt-4">
-            <p>Our industrial fabrication calculation suite processes material profile specifications utilizing standardized density matrix metrics. By parsing physical attributes including plate length, width profiles, and targeted alloy thickness increments, engineers can determine structural weights and accurate bend clearances safely on open-source edge nodes.</p>
-        </article>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="w-full text-center py-4 text-xs text-slate-600 border-t border-slate-800/50 bg-slate-950/40">
+        <!-- 📚 HIGH-VALUE SEO TERMINOLOGY GLOSSARY -->
+        <section class="mt-12 border-t border-slate-800 pt-8">
+            <h2 class="text-lg font-bold text-slate-200 mb-4 tracking-wide text-center md:text-left">Fabrication Terminology Matrix</h2>
+            <div class="grid md:grid-cols-3 gap-4 text-xs text-slate-400">
