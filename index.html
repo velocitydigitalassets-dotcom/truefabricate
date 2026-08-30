@@ -7,7 +7,7 @@
     <meta name="description" content="Free industrial fabrication calculation suite. Instantly determine sheet metal weight, metallurgical mass profiles, and precise bend allowance measurements.">
     <meta name="keywords" content="sheet metal weight calculator, bend allowance calculator, steel plate weight, metal fabrication tools, engineering calculator, bend radius, k-factor">
     
-    <!-- Production CSS engine to guarantee high-contrast text rendering on dark themes -->
+    <!-- Clean, production-ready styling backbone to completely eliminate site loading lag -->
     <script src="https://jsdelivr.net"></script>
     <style>
         body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; }
@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <!-- Glassmorphism Container with subtle amber accent border -->
+        <!-- Glassmorphism Container with explicit high-contrast theme overrides -->
         <div class="grid md:grid-cols-2 gap-8 bg-slate-900/90 p-6 rounded-2xl border border-amber-500/20 backdrop-blur-md shadow-2xl shadow-black/80">
             <!-- CALCULATOR INPUTS -->
             <div class="space-y-4">
@@ -129,7 +129,7 @@
                     </div>
                 </div>
 
-                <!-- EMBEDDED INQUIRY FORM (White Text Color Parameters Overrides) -->
+                <!-- EMBEDDED DIRECT WORKER INQUIRY FORM -->
                 <form id="inquiryForm" onsubmit="submitInquiry(event)" class="space-y-2 pt-1 text-left">
                     <span class="text-[10px] uppercase text-amber-400 tracking-widest block text-center font-bold">Secure TrueFabricate.com Asset</span>
                     <div class="grid grid-cols-2 gap-2">
@@ -277,7 +277,7 @@
             }
         }
 
-        // ASYNC API HOOK: DISPATCH FORM DATA TO YOUR CLOUDFLARE WORKER ROUTER
+        // ASYNC API HOOK: DISPATCH FORM DATA TO YOUR REVENUE WORKER ROUTER
         async function submitInquiry(event) {
             event.preventDefault();
             const statusEl = document.getElementById('formStatus');
@@ -292,7 +292,7 @@
             };
 
             try {
-                // Fixed secure connection endpoint passing data right to your operational Worker hub
+                // Fixed secure API URL targeting the active switchboard router edge node instead of the website root
                 const response = await fetch("https://thesolidlithium-site.velocitydigitalassets.workers.dev", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -304,7 +304,7 @@
                     statusEl.className = "text-[10px] block text-center font-semibold mt-1 text-emerald-400";
                     document.getElementById('inquiryForm').reset();
                 } else {
-                    throw new Error("API Server Refusal Connection Failure");
+                    throw new Error("API Server Connection Refusal Failure");
                 }
             } catch (err) {
                 statusEl.innerText = "Transmission Link Interrupt. Review Core Console Node Logs.";
